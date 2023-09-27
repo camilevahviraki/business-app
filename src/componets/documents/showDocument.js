@@ -31,6 +31,12 @@ const ShowDocument = () => {
   } = document;
   return (
     <div className='page-container'>
+      <Link
+        className='new-department'
+        to={`../document/${id}/edit`}
+      >
+        Edit
+      </Link>
       <div className='member-description main-member-description'>
         <h4 className='member-name'>{name}</h4>
         {

@@ -65,7 +65,7 @@ const NewDocument = () => {
       setMessage(null);
       setLoader(false)
       if(userData.admin){
-        navigate(`../entity/${entity_id}/document/${department_id}`);
+        navigate(`../entity/${entity_id}/department/${department_id}`);
       }else {
         navigate('../');
       }
