@@ -1,0 +1,55 @@
+
+.place-main-container {
+    width: 90%;
+    border: 1px solid #8080804a;
+    overflow: hidden;
+    position: relative;
+    height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.title-places {
+    font-weight: 600;
+    font-size: 22px;
+    color: #001e21;
+}
+
+.leaflet-control-zoom {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.leaflet-control-zoom a {
+    border: 1px solid gray;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 2px;
+    background-color: #88888038;
+}
+
+.leaflet-my-location-icon {
+    border-radius: 50%;
+    animation: iconlocation 3s linear 5ms infinite normal forwards;
+    border: 2px solid #fff;
+}
+
+@keyframes iconlocation {
+    from {
+      width: 25px;
+      height: 25px;
+    }to {
+      width: 30px;
+      height: 30px;
+    }
+}
+
+.Leaflet-position-circle {
+    background-color: #22445344;
+}
