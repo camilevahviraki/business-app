@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.switch .input-check { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  /* left: 0; */
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  width: 40px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.input-check:checked + .slider {
+  background-color: #024957ce;
+}
+
+.input-check:focus + .slider {
+  box-shadow: 0 0 1px #014866;
+}
+
+.input-check:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.button-loader {
+  color: #dedede;
+  animation: loader 2s linear 1ms infinite normal forwards;
+}
+
+@keyframes loader {
+  from{
+    transform: rotate(0deg);
+  }to{
+    transform: rotate(360deg);
+  }
+}
