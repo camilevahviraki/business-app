@@ -4,6 +4,7 @@ import linkURL from '../link';
 const CREATE_DOCUMENT = 'redux/store/createDocumentReducer/CREATE_DOCUMENT';
 const DELETE_DOCUMENT = 'redux/store/createEntityReducer/DELETE_DOCUMENT';
 const DELETE_DOCUMENT_RESPONSE = 'redux/store/createCartsReducer/DELETE_DOCUMENT_RESPONSE';
+const EDIT_DOCUMENT = 'redux/store/createDocumentReducer/EDIT_DOCUMENT';
 
 const createDocumentReducer = (state = { message: null }, action) => {
   switch (action.type) {
@@ -13,6 +14,8 @@ const createDocumentReducer = (state = { message: null }, action) => {
       return action.data;
     } case DELETE_DOCUMENT_RESPONSE: {
       return {message: null}
+    }case EDIT_DOCUMENT: {
+      return action.data;
     }
     default:
       return state;
@@ -63,6 +66,15 @@ export const deleteDocument = (id, token) => (dispatch) => {
         },
       });
     });
+};
+
+export const editDocument = (data, token) => (dispatch) => {
+  axios.post(`${linkURL}/document/update`, data).then((response) => {
+    dispatch({
+      type: EDIT_DOCUMENT,
+      data: response.data,
+    });
+  });
 };
 
 export default createDocumentReducer;

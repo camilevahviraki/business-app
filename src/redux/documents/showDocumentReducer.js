@@ -4,7 +4,7 @@ import linkURL from '../link';
 const SHOW_DOCUMENT = 'redux/store/home_page/SHOW_DOCUMENT';
 
 const showDocumentReducer = (
-  state = [],
+  state = {},
   action,
 ) => {
   switch (action.type) {
